@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: "Red Hat Text", sans-serif;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #1d1e28 0.12%,
+    #261c2d 94.84%,
+    #261a2d 100%
+  );
+  &::after {
+    content: "";
+    background-image: url(../image/mountines.png), url(../image/stars.png);
+    background-repeat: no-repeat, repeat;
+    background-position: bottom, top;
+    background-size: contain;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  .title {
+    padding: 132px 0 104px;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+  }
+  .timer {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    .tBox {
+      min-width: 148px;
+      text-align: center;
+      .inputT {
+        position: relative;
+        width: 100%;
+        height: 140px;
+        border-radius: 8px;
+        background-color: #343650;
+        box-shadow: 0 10px 0 #191a23;
+        margin-bottom: 26px;
+        overflow: hidden;
+        font-weight: 700;
+        font-size: 80px;
+        line-height: 89%;
+        letter-spacing: -0.03em;
+        color: #fb5e84;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::after {
+          content: "";
+          width: 12px;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          background-color: #191a23;
+          box-shadow: 148px 0 0 #191a23;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &::before {
+          content: "";
+          width: 100%;
+          height: 50%;
+          background-color: rgb(0, 0, 0, 0.15);
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-bottom: 1px solid rgb(0, 0, 0, 0.25);
+        }
+      }
+      h4 {
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 0.42em;
+        text-transform: uppercase;
+        text-align: center;
+        color: #8385a9;
+      }
+    }
+  }
+  .socialMedia {
+    position: absolute;
+    bottom: 72px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 32px;
+    .socialIcon {
+      path {
+        transition: 0.4s;
+      }
+      &:hover {
+        path {
+          fill: #fb5e84;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 715px) {
+  body {
+    &::after {
+      background-position: bottom right -65px;
+      background-size: auto 168px, contain;
+    }
+    .title {
+      padding: 142px 0 54px;
+      font-size: 18px;
+    }
+    .timer {
+      gap: 16px;
+      .tBox {
+        min-width: 70px;
+        max-width: 70px;
+        .inputT {
+          height: 66px;
+          border-radius: 4px;
+          margin-bottom: 13px;
+          font-size: 36px;
+          line-height: 197%;
+          &::after {
+            width: 6px;
+            box-shadow: 70px 0 0 #191a23;
+          }
+        }
+        h4 {
+          font-size: 7px;
+        }
+      }
+    }
+    .socialMedia {
+      bottom: 48px;
+    }
+  }
+}
